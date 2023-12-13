@@ -11,7 +11,7 @@ struct dados {
 char nome [100];
 char dataNascimento  [100];
 float Nota [2];
-float media;
+float Media[5];
 };
 
 // ------------Operação de ddados-----------
@@ -21,9 +21,10 @@ float CalcularMedia (struct dados aluno []) {
     setlocale(LC_ALL, "portuguese");  
     
 int i;
-float Media;
 int j;
 float SomaNota = 0;
+float Media[5];
+
 
  for ( i = 0; i < quantidade; i++)
 {
@@ -31,27 +32,28 @@ float SomaNota = 0;
 for (j = 0; j < contador; j++ )  {
     SomaNota+= aluno[i].Nota[j]; 
 }
-    Media = SomaNota/contador;  
+    Media[i] = SomaNota/contador;  
  }
- return Media;
+ return Media[i];
                                          }
                                          
                                       
 void verificacao(struct dados aluno[]) {
 	
 	int i;
-	
+	float Media[5];
 	char Resultado[100];
+	
+	
 	for (i = 0; i < quantidade; i++) {
-	if (Media >= 7) {
+	if (Media[i] >= 7) {
 	strcmpy(Resultado, "Aluno aprovado");
 	} else {		
 	strcmpy(Resultado, "Aluno reprovado");
 	}
-	}
 	printf("%s", Resultado);		
 }                                         
-                                         
+ }                                         
                                          
                                          
                                          
